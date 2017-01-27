@@ -1,0 +1,30 @@
+
+@font-face {
+    font-family: 'starwarsjs';
+    src:  
+    url('../fonts/starwarsjs.woff?szdw01') format('woff'),
+    url('../fonts/starwarsjs.svg?szdw01#starwarsjs') format('svg');
+    
+}
+.rate_star:before {
+    content: "\e902";
+    font-family: 'starwarsjs' !important;
+    
+}
+
+.rate_star{
+    color: #cccccc;
+    cursor: pointer;
+    font-size: 20px;
+    padding-right: 8px;
+}
+.rate_star.over{
+    color: #317eac;
+}
+.rate_star.checked{
+    color: #317eac;
+}
+
+
+
+
