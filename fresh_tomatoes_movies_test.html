@@ -1,9 +1,4 @@
-import webbrowser
-import os
-import re
 
-# Styles and scripting for the page
-main_page_head = '''
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -11,7 +6,6 @@ main_page_head = '''
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-
     <style type="text/css" media="screen">
     /*NAVIGATION MENU STYLE MOBILE*/
       * {
@@ -95,7 +89,6 @@ main_page_head = '''
         background-color: white;
         color: rgb(140, 193, 193);
         padding: 5px;
-        border-radius: 50%;
       }
 
       /*NAVIGATION MENU STYLE FULL*/
@@ -127,13 +120,12 @@ main_page_head = '''
         }
 
         header li:hover a {
-          border-top: none;
-          font-size: 30px;
-        }
+        border-top: none;
+        font-size: 30px;
+      }
 
-        header .nav-active {
-          font-size: 24px;
-        }
+
+
       }
 
       /*CONTAINER RESPONSIVE STYLE*/
@@ -243,20 +235,28 @@ main_page_head = '''
         max-width: 640px;
         }
       }
-    </style>
 
+      /*POSTERS BUTTON*/
+      .wrap-text-img {
+
+      }
+
+
+
+    </style>
     <script type="text/javascript" charset="utf-8">
       // Menu open closed
+      var nav = document.getElementById("main-menu");
       function openCloseFunction() {
-          var nav = document.getElementById("main-menu");
           if (nav.className === "normal") {
               nav.className = "active";
           } else {
                 nav.className = "normal";}
+
       }
 
       function closeMenuFunction() {
-          document.getElementById("main-menu").className = "normal";
+          nav.className = "normal";
       }
 
       //Get IMDB rating
@@ -294,20 +294,17 @@ main_page_head = '''
             "frameborder": 0
           }));
       });
-
       // Animate in the movies when the page loads
       $(document).ready(function () {
         $(".movie-tile").hide().first().show("fast", function showNext() {
           $(this).next("div").show("fast", showNext);
         });
       });
+
+
     </script>
-
 </head>
-'''
 
-# The main page layout and title bar
-main_page_content = '''
 <!DOCTYPE html>
 <html lang="en">
 <body>
@@ -318,12 +315,12 @@ main_page_content = '''
     </div>
     <nav id="main-menu" class="normal">
       <ul>
-        <li><a href="fresh_tomatoes_movies.html">Movies</a></li>
-        <li class="nav-active"><a href="fresh_tomatoes_TVseries.html">TV Series</a></li>
+        <li><a href="">Movies</a></li>
+        <li><a href="">TV Series</a></li>
       </ul>
     </nav>
   </header>
-<!-- Trailer Video Modal -->
+  <!-- Trailer Video Modal -->
   <div class="modal" id="trailer">
     <button type="button" class="hanging-close" data-dismiss="modal" aria-hidden="true">
       <span aria-hidden="true">&times;</span>
@@ -342,55 +339,91 @@ main_page_content = '''
       </div>
     </div>
   </div>
-<!-- Main Page Content -->
+
+  <!-- Main Page Content -->
+
   <div class="container row-eq-height" onclick="closeMenuFunction()">
-    {movie_tiles}
+
+    <div class="movie-tile text-center" data-trailer-imdb-id="tt0077631" data-trailer-youtube-id="f2CCEixOVVU" data-toggle="modal" data-target="#trailer">
+        <button type="button" class="wrap-text-img">
+          <img src="https://images-na.ssl-images-amazon.com/images/M/MV5BMTcyMTA5MTY3MF5BMl5BanBnXkFtZTgwMTMwNzAxMDE@._V1_.jpg" width="220" height="342" alt="Poster of movie Grease">
+          <span class="text-content">Good girl Sandy and greaser Danny fell in love over the summer.When they unexpectedly discover they're now in the same high school, will they be able to rekindle their romance?</span>
+        </button>
+        <h2>Grease</h2>
+    </div>
+
+    <div class="movie-tile text-center" data-trailer-imdb-id="tt0092890" data-trailer-youtube-id="-Qd0vb_DMBY" data-toggle="modal" data-target="#trailer">
+        <div class="rate_row"></div>
+        <div class="wrap-text-img">
+          <img src="https://images-na.ssl-images-amazon.com/images/M/MV5BMTc3MDY3ODQ2OV5BMl5BanBnXkFtZTgwOTQ2NTYxMTE@._V1_.jpg" width="220" height="342" alt="Poster of movie Dirty Dancing">
+          <span class="text-content">Spending the summer at a Catskills resort with her family, Frances Houseman falls in love with the camp's dance instructor, Johnny Castle.</span>
+        </div>
+        <h2>Dirty Dancing</h2>
+    </div>
+
+    <div class="movie-tile text-center" data-trailer-imdb-id="tt0099653" data-trailer-youtube-id="vIy3MDzPyKg" data-toggle="modal" data-target="#trailer">
+        <div class="rate_row"></div>
+        <div class="wrap-text-img">
+          <img src="https://images-na.ssl-images-amazon.com/images/M/MV5BMTU0NzQzODUzNl5BMl5BanBnXkFtZTgwMjc5NTYxMTE@._V1_.jpg" width="220" height="342" alt="Poster of movie Ghost">
+          <span class="text-content">After a young man is murdered, his spirit stays behind to warn his lover of impending danger, with the help of a reluctant psychic.</span>
+        </div>
+        <h2>Ghost</h2>
+    </div>
+
+    <div class="movie-tile text-center" data-trailer-imdb-id="tt0103855" data-trailer-youtube-id="LqkflVAneKg" data-toggle="modal" data-target="#trailer">
+        <div class="rate_row"></div>
+        <div class="wrap-text-img">
+          <img src="https://images-na.ssl-images-amazon.com/images/M/MV5BYjNhMGEwNDYtOTYxZC00NmY3LWI0ZmMtMDdmZTU2OTgzMDYwXkEyXkFqcGdeQXVyMTQxNzMzNDI@._V1_.jpg" width="220" height="342" alt="Poster of movie The Bodyguard">
+          <span class="text-content">A former Secret Service agent takes on the job of bodyguard to a pop singer, whose lifestyle is most unlike a President's.</span>
+        </div>
+        <h2>The Bodyguard</h2>
+    </div>
+
+    <div class="movie-tile text-center" data-trailer-imdb-id="tt0108052" data-trailer-youtube-id="JdRGC-w9syA" data-toggle="modal" data-target="#trailer">
+        <div class="rate_row"></div>
+        <div class="wrap-text-img">
+          <img src="https://images-na.ssl-images-amazon.com/images/M/MV5BMzMwMTM4MDU2N15BMl5BanBnXkFtZTgwMzQ0MjMxMDE@._V1_.jpg" width="220" height="342" alt="Poster of movie Schindler's List">
+          <span class="text-content">In German-occupied Poland during World War II, Oskar Schindler gradually becomes concerned for his Jewish workforce after witnessing their persecution by the Nazi Germans.</span>
+        </div>
+        <h2>Schindler's List</h2>
+    </div>
+
+    <div class="movie-tile text-center" data-trailer-imdb-id="tt0758758" data-trailer-youtube-id="g7ArZ7VD-QQ" data-toggle="modal" data-target="#trailer">
+        <div class="rate_row"></div>
+        <div class="wrap-text-img">
+          <img src="https://images-na.ssl-images-amazon.com/images/M/MV5BMTAwNDEyODU1MjheQTJeQWpwZ15BbWU2MDc3NDQwNw@@._V1_.jpg" width="220" height="342" alt="Poster of movie Into the wild">
+          <span class="text-content">After graduating from Emory University, top student and athlete Christopher McCandless abandons his possessions, gives his entire $24,000 savings account to charity and hitchhikes to Alaska to live in the wilderness. Along the way, Christopher encounters a series of characters that shape his life.</span>
+        </div>
+        <h2>Into the wild</h2>
+    </div>
+
+    <div class="movie-tile text-center" data-trailer-imdb-id="tt0120689" data-trailer-youtube-id="ctRK-4Vt7dA" data-toggle="modal" data-target="#trailer">
+        <div class="rate_row"></div>
+        <div class="wrap-text-img">
+          <img src="https://images-na.ssl-images-amazon.com/images/M/MV5BMTUxMzQyNjA5MF5BMl5BanBnXkFtZTYwOTU2NTY3._V1_.jpg" width="220" height="342" alt="Poster of movie The Green Mile">
+          <span class="text-content">The lives of guards on Death Row are affected by one of their charges: a black man accused of child murder and rape, yet who has a mysterious gift.</span>
+        </div>
+        <h2>The Green Mile</h2>
+    </div>
+
+    <div class="movie-tile text-center" data-trailer-imdb-id="tt0268978" data-trailer-youtube-id="WFJgUm7iOKw" data-toggle="modal" data-target="#trailer">
+        <div class="rate_row"></div>
+        <div class="wrap-text-img">
+          <img src="https://images-na.ssl-images-amazon.com/images/M/MV5BMzcwYWFkYzktZjAzNC00OGY1LWI4YTgtNzc5MzVjMDVmNjY0XkEyXkFqcGdeQXVyMTQxNzMzNDI@._V1_SY1000_CR0,0,673,1000_AL_.jpg" width="220" height="342" alt="Poster of movie A Beautiful Mind">
+          <span class="text-content">After John Nash, a brilliant but asocial mathematician, accepts secret work in cryptography, his life takes a turn for the nightmarish.</span>
+        </div>
+        <h2>A Beautiful Mind</h2>
+    </div>
+
+    <div class="movie-tile text-center" data-trailer-imdb-id="tt0111161" data-trailer-youtube-id="6hB3S9bIaco" data-toggle="modal" data-target="#trailer">
+        <div class="rate_row"></div>
+        <div class="wrap-text-img">
+          <img src="https://images-na.ssl-images-amazon.com/images/M/MV5BODU4MjU4NjIwNl5BMl5BanBnXkFtZTgwMDU2MjEyMDE@._V1_SY1000_CR0,0,672,1000_AL_.jpg" width="220" height="342" alt="Poster of movie The Shawshank Redemption">
+          <span class="text-content">Two imprisoned men bond over a number of years, finding solace and eventual redemption through acts of common decency.</span>
+        </div>
+        <h2>The Shawshank Redemption</h2>
+    </div>
+
   </div>
 </body>
 </html>
-'''
-
-# A single movie entry html template
-movie_tile_content = '''
-  <div class="movie-tile text-center" data-trailer-imdb-id="{imbd_id}" data-trailer-youtube-id="{trailer_youtube_id}" data-toggle="modal" data-target="#trailer">
-    <button type="button" class="wrap-text-img">
-      <img src="{poster_image_url}" width="220" height="342" alt="Poster of movie {movie_title}">
-      <span class="text-content">{movie_storyline}</span>
-    </button>
-    <h2>{movie_title}</h2>
-  </div>
-'''
-
-def create_movie_tiles_content(movies):
-  # The HTML content for this section of the page
-  content = ''
-  for movie in movies:
-    # Extract the youtube ID from the url
-    youtube_id_match = re.search(r'(?<=v=)[^&#]+', movie.trailer_youtube_url)
-    youtube_id_match = youtube_id_match or re.search(r'(?<=be/)[^&#]+', movie.trailer_youtube_url)
-    trailer_youtube_id = youtube_id_match.group(0) if youtube_id_match else None
-
-    # Append the tile for the movie with its content filled in
-    content += movie_tile_content.format(
-      movie_title=movie.title,
-      movie_storyline=movie.storyline,
-      poster_image_url=movie.poster_image_url,
-      trailer_youtube_id=trailer_youtube_id,
-      imbd_id=movie.imbd_id
-    )
-  return content
-
-def open_movies_page(movies):
-  # Create or overwrite the output file
-  output_file = open('fresh_tomatoes_TVseries.html', 'w')
-
-  # Replace the placeholder for the movie tiles with the actual dynamically generated content
-  rendered_content = main_page_content.format(movie_tiles=create_movie_tiles_content(movies))
-
-  # Output the file
-  output_file.write(main_page_head + rendered_content)
-  output_file.close()
-
-  # open the output file in the browser
-  url = os.path.abspath(output_file.name)
-  webbrowser.open('file://' + url, new=2)  # open in a new tab, if possible

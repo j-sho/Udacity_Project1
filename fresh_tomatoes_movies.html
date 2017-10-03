@@ -1,266 +1,414 @@
 
 <head>
     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>My video playlist</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
-    <!-- Bootstrap 3 -->
-    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://bootswatch.com/cerulean/bootstrap.min.css">
-    <script src="https://netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
-    <script src="https://code.jquery.com/jquery-2.1.3.min.js"></script>
-    <link rel="stylesheet" type="text/css" href="css/star_rate_style.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>    
-    <script src="js/starwarsjs.js"></script>
-    <script src="https://netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
     <style type="text/css" media="screen">
-        body {
-            padding-top: 80px;
-        }
-        #trailer .modal-dialog {
-            margin-top: 200px;
-            width: 640px;
-            height: 480px;
-        }
-        .hanging-close {
-            position: absolute;
-            top: -12px;
-            right: -12px;
-            z-index: 9001;
-        }
-        #trailer-video {
-            width: 100%;
-            height: 100%;
-        }
-        .movie-tile {
-            margin-bottom: 20px;
-            padding-top: 20px;
-        }
-       
-        @media only screen and (min-width: 600px) {
-            .row-eq-height {
-              display: -webkit-box;
-              display: -webkit-flex;
-              display: -ms-flexbox;
-              display: flex;
+    /*NAVIGATION MENU STYLE MOBILE*/
+      * {
+        margin: 0;
+        padding: 0;
+        outline: 0;
+        box-sizing: border-box;
+      }
 
-            }
-        } 
-        
-        
-        @media only screen and (max-width: 600px) {
-            .container{
-              max-width: 310px;
-            }
+      body {
+        height: auto !important;
+        height: 100%;
+        min-height: 100%;
+      }
+
+      header {
+        background-color: rgb(140, 193, 193);
+        color: white;
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+      }
+
+      #logo {
+        display: flex;
+        justify-content: space-between;
+        padding: 10px 15px;
+      }
+
+      #logo button {
+        padding: 0;
+        margin: 0;
+        border: none;
+        background: none;
+        color: white;
+        font-weight: bold;
+        font-size: 15px;
+        margin-top: 20px;
+      }
+
+      header > nav {
+        background-color: white;
+        color: #BE7403;
+        flex: 1;
+        /*display: none;*/
+      }
+
+      header .normal {
+        display: none;
+      }
+
+      header .active {
+        display: block;
+      }
+
+      header nav > ul {
+        list-style-type: none;
+      }
+
+      header nav > ul > li {
+        border-bottom: 0.5px dotted rgb(140, 193, 193);
+        position: relative;
+      }
+
+      header li:hover a {
+        background-color: rgb(140, 193, 193);
+        color: white;
+        border-top: 5px solid white;
+        font-size: 20px;
+      }
+
+      header nav > ul > li > a {
+        display: block;
+        color: rgba(0,0,0,0.65);
+        padding: 1.5rem 0;
+        text-decoration: none;
+        transition: 250ms all ease;
+      }
+
+      #menu-button:hover {
+        background-color: white;
+        color: rgb(140, 193, 193);
+        padding: 5px;
+        border-radius: 50%;
+      }
+
+      /*NAVIGATION MENU STYLE FULL*/
+      @media only screen and (min-width: 600px) {
+
+        header .normal {
+          display: inline;
         }
-        
-        .wrap-text-img {
-            vertical-align: center;
-            display: inline-block;
-            text-align: center;
+
+        #menu-button {
+          display: none;
+        }
+
+        header nav {
+          background-color: rgb(140, 193, 193);
+          text-align: right;
 
         }
 
-        .text-content {
-            background: #787878 ;
-            color: white;
-            cursor: pointer;
-            height: 342px;
-            left: 15;
-            position: absolute;
-            display: block;
-            text-align: center;
-            align-items: center;
-            vertical-align: middle;
-            top: 50;
-            width: 220px;
-            opacity: 0;
-            padding: 20px;
+        header nav > ul > li{
+          display: inline;
         }
 
-        .movie-tile:hover span.text-content {
-            opacity: 0.8;
+        header nav > ul > li > a {
+          padding: 0 15px 5px 0;
+          margin: 0;
+          display: inline-block;
+          color: white;
         }
 
+        header li:hover a {
+          border-top: none;
+          font-size: 30px;
+        }
+
+        header .nav-active {
+          font-size: 24px;
+        }
+      }
+
+      /*CONTAINER RESPONSIVE STYLE*/
+      .text-content {
+        display: none;
+      }
+
+      .container {
+        padding: 2em 3em;
+        margin: 0 auto;
+        max-width: 1200px;
+        display: flex;
+        flex-wrap: wrap;
+        background-color: #E8E8E8;
+        border: 1px solid #A9A9A9;
+        text-align: center;
+      }
+
+      h2 {
+        height: 35px;
+        font-size: 1em;
+        text-align: center;
+        word-wrap: break-word;
+        white-space: normal;
+        max-width: 220px;
+      }
+
+      .movie-tile {
+        padding: 0 0 1em 1em;
+      }
+
+      /*TRAILER CONTAINER STYLE*/
+      #trailer {
+        max-width: 1000px;
+        max-height: 500px;
+        /*background-color: #191919;*/
+        padding: 1.5em;
+        position: fixed;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        margin: auto;
+      }
+
+      .trailer-container {
+        margin: 0 auto;
+        padding: 0;
+        width: 95%;
+        display: flex;
+        flex-wrap: wrap;
+      }
+
+      #trailer-video-container{
+        margin: 10px;
+        min-width: 300px;
+        flex-grow: 2;
+      }
 
 
-        .movie-tile:hover {
-            background-color: #EEE;
-            cursor: pointer;
-        }
-        .scale-media {
-            padding-bottom: 56.25%;
-            position: relative;
-        }
-        .scale-media iframe {
-            border: none;
-            height: 100%;
-            position: absolute;
-            width: 100%;
-            left: 0;
-            top: 0;
-            background-color: white;
+      #trailer-video {
+        width: 100%;
+        height: 100%;
+        max-width: 640px;
+        max-height: 480px;
+      }
 
+      #trailer-description{
+        padding: 15px;
+        margin: 10px;
+        max-height: 480px;
+        max-width: 300px;
+        background-color: white;
+        color: rgb(140, 193, 193);
+      }
+
+      #trailer-description-name {
+        margin: 10px auto;
+        font-size: 28px;
+      }
+
+      #trailer-description-full {
+        font-size: 18px;
+      }
+
+      .hanging-close {
+        background: none;
+        border: none;
+        color: white;
+        font-size: 28px;
+        font-weight: 800;
+      }
+
+      .ratingDate {
+        color: black;
+        font-size: 18px;
+        display: inline-block;
+        padding: 0;
+        margin: 0;
+        padding-left: 10px;
+      }
+
+      /*NAVIGATION MENU STYLE FULL*/
+      @media only screen and (max-width: 873px) {
+        #trailer-description{
+        max-width: 100%;
+        max-width: 640px;
         }
-        
-        }
+      }
     </style>
+
     <script type="text/javascript" charset="utf-8">
-        // Pause the video when the modal is closed
-        $(document).on('click', '.hanging-close, .modal-backdrop, .modal', function (event) {
-            // Remove the src so the player itself gets removed, as this is the only
-            // reliable way to ensure the video stops playing in IE
-            $("#trailer-video-container").empty();
-        });
-        // Start playing the video whenever the trailer modal is opened
-        $(document).on('click', '.movie-tile', function (event) {
-            var trailerYouTubeId = $(this).attr('data-trailer-youtube-id')
-            var sourceUrl = 'http://www.youtube.com/embed/' + trailerYouTubeId + '?autoplay=1&html5=1';
-            $("#trailer-video-container").empty().append($("<iframe></iframe>", {
-              'id': 'trailer-video',
-              'type': 'text-html',
-              'src': sourceUrl,
-              'frameborder': 0
-            }));
-        });
-        // Animate in the movies when the page loads
-        $(document).ready(function () {
-          $('.movie-tile').hide().first().show("fast", function showNext() {
-            $(this).next("div").show("fast", showNext);
+      // Menu open closed
+      function openCloseFunction() {
+          var nav = document.getElementById("main-menu");
+          if (nav.className === "normal") {
+              nav.className = "active";
+          } else {
+                nav.className = "normal";}
+      }
+
+      function closeMenuFunction() {
+          document.getElementById("main-menu").className = "normal";
+      }
+
+      //Get IMDB rating
+      function imdbRating(id) {
+          var imdbUrl = "http://www.theimdbapi.org/api/movie?movie_id=" + id;
+          $.get(imdbUrl, function(data) {
+              $("#trailer-rating").empty().prepend("<span><a href='http://www.imdb.com/title/" + id + "/?ref_=plg_rt_1'><img src='http://g-ecx.images-amazon.com/images/G/01/imdb/plugins/rating/images/imdb_46x22.png' alt='" + data.title + " on IMDb' /></a><p class='ratingDate'>" + data.rating + "</p></span>");
           });
-        });
+      }
 
-        $( document ).ready(function() {
-            $('.rate_row').starwarsjs({
-                stars : 5,
-                count : 1
-            });
+      // Pause the video when the modal is closed
+      $(document).on("click", ".hanging-close, .modal-backdrop, .modal", function (event) {
+          // Remove the src so the player itself gets removed, as this is the only
+          // reliable way to ensure the video stops playing in IE
+          $("#trailer-video-container").empty();
+          $("#trailer-rating").empty();
+          $("#trailer-description").hide();
+      });
 
+      // Start playing the video whenever the trailer modal is opened
+      $(document).on("click", ".movie-tile", function (event) {
+          var trailerDescriptionName = $(this).find("h2").text();
+          $("#trailer-description-name").text(trailerDescriptionName);
+          var trailerDescription = $(this).find("span").text();
+          $("#trailer-description-full").text(trailerDescription);
+          var trailerIMDBId = $(this).attr("data-trailer-imdb-id");
+          imdbRating(trailerIMDBId);
+          $("#trailer-description").show();
+          var trailerYouTubeId = $(this).attr("data-trailer-youtube-id");
+          var sourceUrl = "http://www.youtube.com/embed/" + trailerYouTubeId + "?autoplay=1&html5=1";
+          $("#trailer-video-container").empty().append($("<iframe></iframe>", {
+            "id": "trailer-video",
+            "type": "text-html",
+            "src": sourceUrl,
+            "frameborder": 0
+          }));
+      });
+
+      // Animate in the movies when the page loads
+      $(document).ready(function () {
+        $(".movie-tile").hide().first().show("fast", function showNext() {
+          $(this).next("div").show("fast", showNext);
         });
+      });
     </script>
+
 </head>
 
 <!DOCTYPE html>
 <html lang="en">
-  <body>
-    <!-- Trailer Video Modal -->
-    <div class="modal" id="trailer">
-      <div class="modal-dialog">
-        <div class="modal-content">
-          <a href="#" class="hanging-close" data-dismiss="modal" aria-hidden="true">
-            <img src="https://lh5.ggpht.com/v4-628SilF0HtHuHdu5EzxD7WRqOrrTIDi_MhEG6_qkNtUK5Wg7KPkofp_VJoF7RS2LhxwEFCO1ICHZlc-o_=s0#w=24&h=24"/>
-          </a>
-          <div class="scale-media" id="trailer-video-container">
-          </div>
+<body>
+  <header>
+    <div id="logo" class="menuUp">
+      <h1>My Videos Playlist</h1>
+      <button id="menu-button" type="button" onclick="openCloseFunction()">Go to</button>
+    </div>
+    <nav id="main-menu" class="normal">
+      <ul>
+        <li class="nav-active"><a href="fresh_tomatoes_movies.html">Movies</a></li>
+        <li><a href="fresh_tomatoes_TVseries.html">TV Series</a></li>
+      </ul>
+    </nav>
+  </header>
+<!-- Trailer Video Modal -->
+  <div class="modal" id="trailer">
+    <button type="button" class="hanging-close" data-dismiss="modal" aria-hidden="true">
+      <span aria-hidden="true">&times;</span>
+    </button>
+    <div class="modal-dialog trailer-container">
+      <div class="scale-media" id="trailer-video-container">
+      </div>
+      <div id="trailer-description">
+        <h2 id="trailer-description-name">
+        </h2>
+        <span id="trailer-description-full">
+        </span>
+        <br><br>
+        <div id="trailer-rating">
         </div>
       </div>
     </div>
+  </div>
+<!-- Main Page Content -->
+  <div class="container row-eq-height" onclick="closeMenuFunction()">
     
-    <!-- Main Page Content -->
-    <div class="container">
-      <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
-        <div class="container">
-          <div class="navbar-header">
-            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse">
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-            </button>
-            <a class="navbar-brand" href="#">My video playlist</a>
-          </div>
-          <div class="collapse navbar-collapse" id="navbar-collapse">
-            <ul class="nav navbar-nav">
-              <li class="active">
-                <a href="fresh_tomatoes_movies.html">Movies</a>
-              </li>
-              <li>
-                <a href="fresh_tomatoes_TVseries.html">TV Series</a>
-              </li>
-          </div>
-      </div>
-    </div>
-    <div class="container row-eq-height">
-      
-<div class="col-md-6 col-lg-4 movie-tile text-center" data-trailer-youtube-id="f2CCEixOVVU" data-toggle="modal" data-target="#trailer">
-    <div class="rate_row"></div>
-    <div class="wrap-text-img">
-      <img src="https://images-na.ssl-images-amazon.com/images/M/MV5BMTcyMTA5MTY3MF5BMl5BanBnXkFtZTgwMTMwNzAxMDE@._V1_.jpg" width="220" height="342">
+  <div class="movie-tile text-center" data-trailer-imdb-id="tt0077631" data-trailer-youtube-id="f2CCEixOVVU" data-toggle="modal" data-target="#trailer">
+    <button type="button" class="wrap-text-img">
+      <img src="https://images-na.ssl-images-amazon.com/images/M/MV5BMTcyMTA5MTY3MF5BMl5BanBnXkFtZTgwMTMwNzAxMDE@._V1_.jpg" width="220" height="342" alt="Poster of movie Grease">
       <span class="text-content">Good girl Sandy and greaser Danny fell in love over the summer.When they unexpectedly discover they're now in the same high school, will they be able to rekindle their romance?</span>
-    </div>
+    </button>
     <h2>Grease</h2>
-</div>
+  </div>
 
-<div class="col-md-6 col-lg-4 movie-tile text-center" data-trailer-youtube-id="-Qd0vb_DMBY" data-toggle="modal" data-target="#trailer">
-    <div class="rate_row"></div>
-    <div class="wrap-text-img">
-      <img src="https://images-na.ssl-images-amazon.com/images/M/MV5BMTc3MDY3ODQ2OV5BMl5BanBnXkFtZTgwOTQ2NTYxMTE@._V1_.jpg" width="220" height="342">
+  <div class="movie-tile text-center" data-trailer-imdb-id="tt0092890" data-trailer-youtube-id="-Qd0vb_DMBY" data-toggle="modal" data-target="#trailer">
+    <button type="button" class="wrap-text-img">
+      <img src="https://images-na.ssl-images-amazon.com/images/M/MV5BMTc3MDY3ODQ2OV5BMl5BanBnXkFtZTgwOTQ2NTYxMTE@._V1_.jpg" width="220" height="342" alt="Poster of movie Dirty Dancing">
       <span class="text-content">Spending the summer at a Catskills resort with her family, Frances Houseman falls in love with the camp's dance instructor, Johnny Castle.</span>
-    </div>
+    </button>
     <h2>Dirty Dancing</h2>
-</div>
+  </div>
 
-<div class="col-md-6 col-lg-4 movie-tile text-center" data-trailer-youtube-id="vIy3MDzPyKg" data-toggle="modal" data-target="#trailer">
-    <div class="rate_row"></div>
-    <div class="wrap-text-img">
-      <img src="https://images-na.ssl-images-amazon.com/images/M/MV5BMTU0NzQzODUzNl5BMl5BanBnXkFtZTgwMjc5NTYxMTE@._V1_.jpg" width="220" height="342">
+  <div class="movie-tile text-center" data-trailer-imdb-id="tt0099653" data-trailer-youtube-id="vIy3MDzPyKg" data-toggle="modal" data-target="#trailer">
+    <button type="button" class="wrap-text-img">
+      <img src="https://images-na.ssl-images-amazon.com/images/M/MV5BMTU0NzQzODUzNl5BMl5BanBnXkFtZTgwMjc5NTYxMTE@._V1_.jpg" width="220" height="342" alt="Poster of movie Ghost">
       <span class="text-content">After a young man is murdered, his spirit stays behind to warn his lover of impending danger, with the help of a reluctant psychic.</span>
-    </div>
+    </button>
     <h2>Ghost</h2>
-</div>
+  </div>
 
-<div class="col-md-6 col-lg-4 movie-tile text-center" data-trailer-youtube-id="LqkflVAneKg" data-toggle="modal" data-target="#trailer">
-    <div class="rate_row"></div>
-    <div class="wrap-text-img">
-      <img src="https://images-na.ssl-images-amazon.com/images/M/MV5BYjNhMGEwNDYtOTYxZC00NmY3LWI0ZmMtMDdmZTU2OTgzMDYwXkEyXkFqcGdeQXVyMTQxNzMzNDI@._V1_.jpg" width="220" height="342">
+  <div class="movie-tile text-center" data-trailer-imdb-id="tt0103855" data-trailer-youtube-id="LqkflVAneKg" data-toggle="modal" data-target="#trailer">
+    <button type="button" class="wrap-text-img">
+      <img src="https://images-na.ssl-images-amazon.com/images/M/MV5BYjNhMGEwNDYtOTYxZC00NmY3LWI0ZmMtMDdmZTU2OTgzMDYwXkEyXkFqcGdeQXVyMTQxNzMzNDI@._V1_.jpg" width="220" height="342" alt="Poster of movie The Bodyguard">
       <span class="text-content">A former Secret Service agent takes on the job of bodyguard to a pop singer, whose lifestyle is most unlike a President's.</span>
-    </div>
+    </button>
     <h2>The Bodyguard</h2>
-</div>
+  </div>
 
-<div class="col-md-6 col-lg-4 movie-tile text-center" data-trailer-youtube-id="JdRGC-w9syA" data-toggle="modal" data-target="#trailer">
-    <div class="rate_row"></div>
-    <div class="wrap-text-img">
-      <img src="https://images-na.ssl-images-amazon.com/images/M/MV5BMzMwMTM4MDU2N15BMl5BanBnXkFtZTgwMzQ0MjMxMDE@._V1_.jpg" width="220" height="342">
+  <div class="movie-tile text-center" data-trailer-imdb-id="tt0108052" data-trailer-youtube-id="JdRGC-w9syA" data-toggle="modal" data-target="#trailer">
+    <button type="button" class="wrap-text-img">
+      <img src="https://images-na.ssl-images-amazon.com/images/M/MV5BMzMwMTM4MDU2N15BMl5BanBnXkFtZTgwMzQ0MjMxMDE@._V1_.jpg" width="220" height="342" alt="Poster of movie Schindler's List">
       <span class="text-content">In German-occupied Poland during World War II, Oskar Schindler gradually becomes concerned for his Jewish workforce after witnessing their persecution by the Nazi Germans.</span>
-    </div>
+    </button>
     <h2>Schindler's List</h2>
-</div>
+  </div>
 
-<div class="col-md-6 col-lg-4 movie-tile text-center" data-trailer-youtube-id="g7ArZ7VD-QQ" data-toggle="modal" data-target="#trailer">
-    <div class="rate_row"></div>
-    <div class="wrap-text-img">
-      <img src="https://images-na.ssl-images-amazon.com/images/M/MV5BMTAwNDEyODU1MjheQTJeQWpwZ15BbWU2MDc3NDQwNw@@._V1_.jpg" width="220" height="342">
+  <div class="movie-tile text-center" data-trailer-imdb-id="tt0758758" data-trailer-youtube-id="g7ArZ7VD-QQ" data-toggle="modal" data-target="#trailer">
+    <button type="button" class="wrap-text-img">
+      <img src="https://images-na.ssl-images-amazon.com/images/M/MV5BMTAwNDEyODU1MjheQTJeQWpwZ15BbWU2MDc3NDQwNw@@._V1_.jpg" width="220" height="342" alt="Poster of movie Into the wild">
       <span class="text-content">After graduating from Emory University, top student and athlete Christopher McCandless abandons his possessions, gives his entire $24,000 savings account to charity and hitchhikes to Alaska to live in the wilderness. Along the way, Christopher encounters a series of characters that shape his life.</span>
-    </div>
+    </button>
     <h2>Into the wild</h2>
-</div>
+  </div>
 
-<div class="col-md-6 col-lg-4 movie-tile text-center" data-trailer-youtube-id="ctRK-4Vt7dA" data-toggle="modal" data-target="#trailer">
-    <div class="rate_row"></div>
-    <div class="wrap-text-img">
-      <img src="https://images-na.ssl-images-amazon.com/images/M/MV5BMTUxMzQyNjA5MF5BMl5BanBnXkFtZTYwOTU2NTY3._V1_.jpg" width="220" height="342">
+  <div class="movie-tile text-center" data-trailer-imdb-id="tt0120689" data-trailer-youtube-id="ctRK-4Vt7dA" data-toggle="modal" data-target="#trailer">
+    <button type="button" class="wrap-text-img">
+      <img src="https://images-na.ssl-images-amazon.com/images/M/MV5BMTUxMzQyNjA5MF5BMl5BanBnXkFtZTYwOTU2NTY3._V1_.jpg" width="220" height="342" alt="Poster of movie The Green Mile">
       <span class="text-content">The lives of guards on Death Row are affected by one of their charges: a black man accused of child murder and rape, yet who has a mysterious gift.</span>
-    </div>
+    </button>
     <h2>The Green Mile</h2>
-</div>
+  </div>
 
-<div class="col-md-6 col-lg-4 movie-tile text-center" data-trailer-youtube-id="WFJgUm7iOKw" data-toggle="modal" data-target="#trailer">
-    <div class="rate_row"></div>
-    <div class="wrap-text-img">
-      <img src="https://images-na.ssl-images-amazon.com/images/M/MV5BMzcwYWFkYzktZjAzNC00OGY1LWI4YTgtNzc5MzVjMDVmNjY0XkEyXkFqcGdeQXVyMTQxNzMzNDI@._V1_SY1000_CR0,0,673,1000_AL_.jpg" width="220" height="342">
+  <div class="movie-tile text-center" data-trailer-imdb-id="tt0268978" data-trailer-youtube-id="WFJgUm7iOKw" data-toggle="modal" data-target="#trailer">
+    <button type="button" class="wrap-text-img">
+      <img src="https://images-na.ssl-images-amazon.com/images/M/MV5BMzcwYWFkYzktZjAzNC00OGY1LWI4YTgtNzc5MzVjMDVmNjY0XkEyXkFqcGdeQXVyMTQxNzMzNDI@._V1_SY1000_CR0,0,673,1000_AL_.jpg" width="220" height="342" alt="Poster of movie A Beautiful Mind">
       <span class="text-content">After John Nash, a brilliant but asocial mathematician, accepts secret work in cryptography, his life takes a turn for the nightmarish.</span>
-    </div>
+    </button>
     <h2>A Beautiful Mind</h2>
-</div>
+  </div>
 
-<div class="col-md-6 col-lg-4 movie-tile text-center" data-trailer-youtube-id="6hB3S9bIaco" data-toggle="modal" data-target="#trailer">
-    <div class="rate_row"></div>
-    <div class="wrap-text-img">
-      <img src="https://images-na.ssl-images-amazon.com/images/M/MV5BODU4MjU4NjIwNl5BMl5BanBnXkFtZTgwMDU2MjEyMDE@._V1_SY1000_CR0,0,672,1000_AL_.jpg" width="220" height="342">
+  <div class="movie-tile text-center" data-trailer-imdb-id="tt0111161" data-trailer-youtube-id="6hB3S9bIaco" data-toggle="modal" data-target="#trailer">
+    <button type="button" class="wrap-text-img">
+      <img src="https://images-na.ssl-images-amazon.com/images/M/MV5BODU4MjU4NjIwNl5BMl5BanBnXkFtZTgwMDU2MjEyMDE@._V1_SY1000_CR0,0,672,1000_AL_.jpg" width="220" height="342" alt="Poster of movie The Shawshank Redemption">
       <span class="text-content">Two imprisoned men bond over a number of years, finding solace and eventual redemption through acts of common decency.</span>
-    </div>
+    </button>
     <h2>The Shawshank Redemption</h2>
-</div>
+  </div>
 
-    </div>
-  </body>
+  </div>
+</body>
 </html>

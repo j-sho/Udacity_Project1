@@ -9,7 +9,8 @@ grease = media.Video(
     " will they be able to rekindle their romance?",
     "https://images-na.ssl-images-amazon.com/images/M/"
     "MV5BMTcyMTA5MTY3MF5BMl5BanBnXkFtZTgwMTMwNzAxMDE@._V1_.jpg",
-    "https://youtu.be/f2CCEixOVVU")
+    "https://youtu.be/f2CCEixOVVU",
+    "tt0077631")
 dirty_dancing = media.Video(
     "Dirty Dancing",
     "Spending the summer at a Catskills resort with her family, "
@@ -17,14 +18,16 @@ dirty_dancing = media.Video(
     "Johnny Castle.",
     "https://images-na.ssl-images-amazon.com/images/M/"
     "MV5BMTc3MDY3ODQ2OV5BMl5BanBnXkFtZTgwOTQ2NTYxMTE@._V1_.jpg",
-    "https://youtu.be/-Qd0vb_DMBY")
+    "https://youtu.be/-Qd0vb_DMBY",
+    "tt0092890")
 ghost = media.Video(
     "Ghost",
     "After a young man is murdered, his spirit stays behind to warn his "
     "lover of impending danger, with the help of a reluctant psychic.",
     "https://images-na.ssl-images-amazon.com/images/M/"
     "MV5BMTU0NzQzODUzNl5BMl5BanBnXkFtZTgwMjc5NTYxMTE@._V1_.jpg",
-    "https://youtu.be/vIy3MDzPyKg")
+    "https://youtu.be/vIy3MDzPyKg",
+    "tt0099653")
 bodyguard = media.Video(
     "The Bodyguard",
     "A former Secret Service agent takes on the job of bodyguard"
@@ -32,7 +35,8 @@ bodyguard = media.Video(
     "https://images-na.ssl-images-amazon.com/images/M/"
     "MV5BYjNhMGEwNDYtOTYxZC00NmY3LWI0ZmMtMDdmZTU2OTgzMDYwXk"
     "EyXkFqcGdeQXVyMTQxNzMzNDI@._V1_.jpg",
-    "https://youtu.be/LqkflVAneKg")
+    "https://youtu.be/LqkflVAneKg",
+    "tt0103855")
 schindler = media.Video(
     "Schindler's List",
     "In German-occupied Poland during World War II, Oskar Schindler "
@@ -40,7 +44,8 @@ schindler = media.Video(
     "witnessing their persecution by the Nazi Germans.",
     "https://images-na.ssl-images-amazon.com/images/M/"
     "MV5BMzMwMTM4MDU2N15BMl5BanBnXkFtZTgwMzQ0MjMxMDE@._V1_.jpg",
-    "https://youtu.be/JdRGC-w9syA")
+    "https://youtu.be/JdRGC-w9syA",
+    "tt0108052")
 wild = media.Video(
     "Into the wild",
     "After graduating from Emory University, top student and athlete"
@@ -50,7 +55,8 @@ wild = media.Video(
     "a series of characters that shape his life.",
     "https://images-na.ssl-images-amazon.com/images/M/"
     "MV5BMTAwNDEyODU1MjheQTJeQWpwZ15BbWU2MDc3NDQwNw@@._V1_.jpg",
-    "https://youtu.be/g7ArZ7VD-QQ")
+    "https://youtu.be/g7ArZ7VD-QQ",
+    "tt0758758")
 green_mile = media.Video(
     "The Green Mile",
     "The lives of guards on Death Row are affected by one of their charges: "
@@ -58,7 +64,8 @@ green_mile = media.Video(
     "who has a mysterious gift.",
     "https://images-na.ssl-images-amazon.com/images/M/"
     "MV5BMTUxMzQyNjA5MF5BMl5BanBnXkFtZTYwOTU2NTY3._V1_.jpg",
-    "https://youtu.be/ctRK-4Vt7dA")
+    "https://youtu.be/ctRK-4Vt7dA",
+    "tt0120689")
 beautiful_mind = media.Video(
     "A Beautiful Mind",
     "After John Nash, a brilliant but asocial mathematician, accepts "
@@ -67,7 +74,8 @@ beautiful_mind = media.Video(
     "https://images-na.ssl-images-amazon.com/images/M/"
     "MV5BMzcwYWFkYzktZjAzNC00OGY1LWI4YTgtNzc5MzVjMDVmNjY0XkEyXk"
     "FqcGdeQXVyMTQxNzMzNDI@._V1_SY1000_CR0,0,673,1000_AL_.jpg",
-    "https://youtu.be/WFJgUm7iOKw")
+    "https://youtu.be/WFJgUm7iOKw",
+    "tt0268978")
 shawshank = media.Video(
     "The Shawshank Redemption",
     "Two imprisoned men bond over a number of years, finding solace "
@@ -75,7 +83,8 @@ shawshank = media.Video(
     "https://images-na.ssl-images-amazon.com/images/M/"
     "MV5BODU4MjU4NjIwNl5BMl5BanBnXkFtZTgwMDU2MjEyMDE@._V1_"
     "SY1000_CR0,0,672,1000_AL_.jpg",
-    "https://youtu.be/6hB3S9bIaco")
+    "https://youtu.be/6hB3S9bIaco",
+    "tt0111161")
 
 # List of movies
 movies = [
@@ -92,7 +101,8 @@ lost = media.Video(
     "to survive on a seemingly deserted tropical island.",
     "https://images-na.ssl-images-amazon.com/images/M/"
     "MV5BMjA3NzMyMzU1MV5BMl5BanBnXkFtZTcwNjc1ODUwMg@@._V1_.jpg",
-    "https://youtu.be/72kQIIDBIUU")
+    "https://youtu.be/72kQIIDBIUU",
+    "tt0411008")
 orange = media.Video(
     "Orange Is the New Black",
     "The story of Piper Chapman, a woman in her thirties who is sentenced "
@@ -101,28 +111,32 @@ orange = media.Video(
     "https://images-na.ssl-images-amazon.com/images/M/"
     "MV5BMjMzMjAxNDY5MV5BMl5BanBnXkFtZTgwMzAzNTQxODE@."
     "_V1_SY1000_CR0,0,674,1000_AL_.jpg",
-    "https://youtu.be/zLyUlTu4KbI")
+    "https://youtu.be/zLyUlTu4KbI",
+    "tt2372162")
 americans = media.Video(
     "The Americans",
     "Two Soviet intelligence agents pose as a married couple to spy on "
     "the American government.",
     "https://images-na.ssl-images-amazon.com/images/M/"
     "MV5BMjAwMzIzOTIyN15BMl5BanBnXkFtZTgwMjU0NTY3MzE@._V1_.jpg",
-    "https://youtu.be/__nTeZrEtvw")
+    "https://youtu.be/__nTeZrEtvw",
+    "tt2149175")
 stranger_things = media.Video(
     "Stranger Things",
     "When a young boy disappears, his mother, a police chief, and his"
     " friends must confront terrifying forces in order to get him back.",
     "https://images-na.ssl-images-amazon.com/images/M/"
     "MV5BMjEzMDAxOTUyMV5BMl5BanBnXkFtZTgwNzAxMzYzOTE@._V1_.jpg",
-    "https://youtu.be/b9EkMc79ZSU")
+    "https://youtu.be/b9EkMc79ZSU",
+    "tt4574334")
 sense8 = media.Video(
     "Sense8",
     "A group of people around the world are suddenly linked mentally, "
     "and must find a way to survive being hunted by those who see them as "
     "a threat to the world's order.",
-    "http://capitalismo.biz/wp-content/uploads/2015/09/Sense8-poster.jpg",
-    "https://youtu.be/E9c_KSZ6zMk")
+    "https://images-na.ssl-images-amazon.com/images/M/MV5BMTU3OTQwOTY2Ml5BMl5BanBnXkFtZTgwMjIzMjYxMjI@._V1_.jpg",
+    "https://youtu.be/E9c_KSZ6zMk",
+    "tt2431438")
 the_100 = media.Video(
     "The 100",
     "Set 97 years after a nuclear war has destroyed civilization, when "
@@ -132,7 +146,8 @@ the_100 = media.Video(
     "https://images-na.ssl-images-amazon.com/images/M/"
     "MV5BYWIzNDMwNGYtMjk5ZC00ZjA2LTg4ZDgtZmI5NDEzMzdkZTc5Xk"
     "EyXkFqcGdeQXVyNDExMTIxMDc@._V1_.jpg",
-    "https://youtu.be/aDrsItJ_HU4")
+    "https://youtu.be/aDrsItJ_HU4",
+    "tt2661044")
 
 # List of TV series
 tv_series = [lost, orange, americans, stranger_things, sense8, the_100]
